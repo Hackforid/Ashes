@@ -5,6 +5,7 @@ import android.app.Service
 import android.content.*
 import android.os.Bundle
 import android.os.IBinder
+import android.util.Log
 
 /**
  * Created by kleist on 16/5/23.
@@ -28,7 +29,7 @@ class AccountSyncService : Service() {
 class AccountSyncAdapter(context: Context?, autoInitialize: Boolean) : AbstractThreadedSyncAdapter(context, autoInitialize) {
 
     override fun onPerformSync(account: Account?, extras: Bundle?, authority: String?, provider: ContentProviderClient?, syncResult: SyncResult?) {
-        context.contentResolver.notifyChange(AccountProvider.CONTENT_URI, null, false)
+        Log.i(AccountSyncAdapter::class.java.simpleName, "sync")
     }
 
 }
