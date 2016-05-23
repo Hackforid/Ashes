@@ -7,8 +7,10 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.smilehacker.ashes.account.AccountProvider
+import com.smilehacker.ashes.foreground.MyService
 import org.jetbrains.anko.button
 import org.jetbrains.anko.onClick
+import org.jetbrains.anko.startService
 import org.jetbrains.anko.verticalLayout
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +36,11 @@ class MainActivity : AppCompatActivity() {
                     ContentResolver.setIsSyncable(account, AccountProvider.AUTHORITY, 1)
                     ContentResolver.setSyncAutomatically(account, AccountProvider.AUTHORITY, true)
                     ContentResolver.addPeriodicSync(account, AccountProvider.AUTHORITY, Bundle.EMPTY, 60)
+                }
+            }
+            button("Fake Service") {
+                onClick {
+                    startService<MyService>()
                 }
             }
         }

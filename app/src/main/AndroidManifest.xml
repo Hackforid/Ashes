@@ -26,6 +26,9 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".foreground.MyService"/>
+        <service android:name=".foreground.FakeService"/>
+
         <service android:name=".account.AccountService"
                  android:exported="true"
                  android:process=":core"
