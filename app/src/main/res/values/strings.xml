@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ashes</string>
+    <string name="account_auth_provider">com.smilehacker.ashes.provider</string>
+    <string name="account_type">com.smilehacker.ashes</string>
 </resources>

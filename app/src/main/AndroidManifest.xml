@@ -19,8 +19,8 @@
         </activity>
 
         <service android:name=".account.AccountService"
-                 android:enabled="true"
                  android:exported="true"
+                 android:process=":core"
                  >
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>
@@ -30,6 +30,24 @@
                 android:resource="@xml/authenticator"/>
 
         </service>
+
+        <service android:name=".account.AccountSyncService"
+                 android:exported="true"
+                 android:process=":sync">
+
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_adapter" />
+        </service>
+        <provider
+            android:name=".account.AccountProvider"
+            android:authorities="@string/account_auth_provider"
+            android:exported="false"
+            android:syncable="true"
+            />
 
     </application>
 

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
             button("Add account") {
                 onClick {
                     val accountManager = getSystemService(Context.ACCOUNT_SERVICE) as AccountManager
-                    val account = Account("Xiaoming", "com.smilehacker")
+                    val account = Account("xiaomi", getString(R.string.account_type))
                     accountManager.addAccountExplicitly(account, "aaa", null)
                 }
             }
