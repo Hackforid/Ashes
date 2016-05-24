@@ -20,15 +20,15 @@ class MyService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        doFake()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        doFake()
-        Log.i("aa", "start fake")
         return super.onStartCommand(intent, flags, startId)
     }
 
     private fun doFake() {
+        Log.i(MyService::class.java.simpleName, "start fake")
         if (Build.VERSION.SDK_INT<= 17) {
             startForeground(R.id.notification, Notification())
         } else {

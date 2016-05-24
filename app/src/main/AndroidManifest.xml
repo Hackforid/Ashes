@@ -11,6 +11,7 @@
         android:name="android.permission.WRITE_SYNC_SETTINGS"/>
     <uses-permission
         android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,8 @@
 
         <service android:name=".foreground.MyService"/>
         <service android:name=".foreground.FakeService"/>
+        <service android:name=".jobscheduler.JobSchedulerService"
+                 android:permission="android.permission.BIND_JOB_SERVICE"/>
 
         <service android:name=".account.AccountService"
                  android:exported="true"

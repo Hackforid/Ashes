@@ -6,6 +6,8 @@ import android.content.*
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
+import com.smilehacker.ashes.foreground.MyService
+import org.jetbrains.anko.startService
 
 /**
  * Created by kleist on 16/5/23.
@@ -30,6 +32,7 @@ class AccountSyncAdapter(context: Context?, autoInitialize: Boolean) : AbstractT
 
     override fun onPerformSync(account: Account?, extras: Bundle?, authority: String?, provider: ContentProviderClient?, syncResult: SyncResult?) {
         Log.i(AccountSyncAdapter::class.java.simpleName, "sync")
+        context.startService<MyService>()
     }
 
 }
