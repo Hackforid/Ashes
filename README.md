@@ -5,4 +5,3 @@ Android保活sample
 2. account sync  
 3. jobschedule
 
-##Usage
