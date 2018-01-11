@@ -6,7 +6,7 @@ import android.content.*
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
-import com.smilehacker.ashes.foreground.MyService
+import com.smilehacker.ashes.foreground.AshesService
 import org.jetbrains.anko.startService
 
 /**
@@ -32,7 +32,7 @@ class AccountSyncAdapter(context: Context?, autoInitialize: Boolean) : AbstractT
 
     override fun onPerformSync(account: Account?, extras: Bundle?, authority: String?, provider: ContentProviderClient?, syncResult: SyncResult?) {
         Log.i(AccountSyncAdapter::class.java.simpleName, "sync")
-        context.startService<MyService>()
+        context.startService<AshesService>()
     }
 
 }

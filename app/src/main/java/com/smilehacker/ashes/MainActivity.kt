@@ -11,7 +11,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.smilehacker.ashes.account.AccountProvider
-import com.smilehacker.ashes.foreground.MyService
+import com.smilehacker.ashes.foreground.AshesService
 import com.smilehacker.ashes.jobscheduler.JobSchedulerService
 import org.jetbrains.anko.button
 import org.jetbrains.anko.onClick
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             }
             button("Fake Service") {
                 onClick {
-                    startService<MyService>()
+                    startService<AshesService>()
                 }
             }
             button("Job Service") {

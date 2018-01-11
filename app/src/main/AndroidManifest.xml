@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".foreground.MyService"/>
+        <service android:name=".foreground.AshesService"/>
         <service android:name=".foreground.FakeService"/>
         <service android:name=".jobscheduler.JobSchedulerService"
                  android:permission="android.permission.BIND_JOB_SERVICE"/>

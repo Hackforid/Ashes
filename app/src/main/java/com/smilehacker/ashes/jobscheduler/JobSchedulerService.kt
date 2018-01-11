@@ -14,7 +14,7 @@ class JobSchedulerService : JobService() {
 
     override fun onStartJob(params: JobParameters?): Boolean {
         Log.i(JobSchedulerService::class.java.simpleName, "on Start job")
-        //startService<MyService>()
+        //startService<AshesService>()
         return false
     }
 }
